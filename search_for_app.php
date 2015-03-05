@@ -1,16 +1,16 @@
 <?php
     //CONSTS
     $search_url = 'https://play.google.com/store/search?q=';
-  	$app_url = 'https://play.google.com/store/apps/details?id=';
-  	$pkg_tag = "data-docid=";
-  	$img_tag = "cover-image";
-  	$icons_path = "/home/ubuntu/workspace/images/";
-  	$icons_ext = ".png";
-  	$src_length = strlen(" src=\"");
-  	$pkg_tag_length = strlen($pkg_tag);
-  	$img_tag_length = strlen($img_tag);
+    $app_url = 'https://play.google.com/store/apps/details?id=';
+    $pkg_tag = "data-docid=";
+    $img_tag = "cover-image";
+    $icons_path =  getcwd() . "/images/";
+    $icons_ext = ".png";
+    $src_length = strlen(" src=\"");
+    $pkg_tag_length = strlen($pkg_tag);
+    $img_tag_length = strlen($img_tag);
   
-	//do isset check before(?)
+  //do isset check before(?)
     $query = $_GET['query'];
     //validate the entry, etc
     
