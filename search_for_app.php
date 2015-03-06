@@ -1,6 +1,7 @@
 <?php
     //CONSTS
     $search_url = 'https://play.google.com/store/search?q=';
+    $search_url_category = '&c=apps';
     $app_url = 'https://play.google.com/store/apps/details?id=';
     $pkg_tag = "data-docid=";
     $img_tag = "cover-image";
@@ -14,7 +15,7 @@
     $query = $_GET['query'];
     //validate the entry, etc
     
-    $rawHtml = file_get_contents($search_url . urlencode($query));
+    $rawHtml = file_get_contents($search_url . urlencode($query) . $search_url_category);
 
     //Just pretend this doesnt exist...
     //TODO make this better with scraping or something

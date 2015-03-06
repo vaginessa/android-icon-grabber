@@ -139,8 +139,8 @@
     //start spinner
     var spinner = document.getElementById("spinner");
     spinner.active = true;
-  	var SEARCH_URL = "https://play.google.com/store/search?q=";
-  	var APP_URL = "https://play.google.com/store/apps/details?id=";
+    var SEARCH_URL = "https://play.google.com/store/search?q=";
+    var APP_URL = "https://play.google.com/store/apps/details?id=";
     var search_field = document.getElementById("search_term");
     var searchTerm = document.getElementById("search_term").value;
     var autoDownload = document.getElementById("autodownload_check").checked;
@@ -149,13 +149,18 @@
   
   console.log("calling php");
     $.ajax({
-        	url:'search_for_app.php',
-        	data: { query: searchTerm},
-    		  type: "GET",
+          url:'search_for_app.php',
+          data: { query: searchTerm},
+          type: "GET",
           complete: function (response) {
             console.log(response.responseText);
-            $("#demo_img").attr('src', response.responseText);
-            $("#image_link").attr('href', response.responseText);
+            if (response.responseText == "error") {
+              console.log("server returned error");
+              $("#demo_img").attr('src', "/images/ic_alert_warning");
+            } else { 
+              $("#demo_img").attr('src', response.responseText);
+              $("#image_link").attr('href', response.responseText);
+            }
             spinner.active = false;
             if (autoDownload) {
               $("#demo_img").click();
@@ -165,8 +170,8 @@
             //window.open(url);
           },
           error: function () {
-        	  alert("Could not download icon.");
-        	  spinner.active = false;
+            alert("Could not download icon.");
+            spinner.active = false;
           }
     });
      
