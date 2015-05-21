@@ -100,6 +100,7 @@
 </head>
 
 <body unresolved>
+  <template is="auto-binding">
   <core-header-panel>
 
     <core-toolbar>
@@ -110,7 +111,7 @@
     
     <div class="container" layout vertical center>
     
-      <paper-input label="Search For Icon By Name" floatingLabel id="search_term"></paper-input>
+      <paper-input label="Search For Icon By Name" floatingLabel id="search_term" on-keyup="{{checkKey}}"></paper-input>
       </br>
       <section>
       <core-label horizontal layout>
@@ -180,6 +181,8 @@
 </script>
   
   
+  <script src="app.js"></script>
+  </template>
 </body>
 
 </html>
