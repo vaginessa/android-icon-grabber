@@ -38,7 +38,5 @@
     $halfHtml = substr($rawDetailHtml, $imgPos + $img_tag_length);
     $imgPosEnd = strpos( $halfHtml, "alt");
     $imageUrl = substr($rawDetailHtml, $imgPos + $img_tag_length + $src_length + 1, $imgPosEnd - 9);
-    $img = $icons_path . $packageName .$icons_ext;
-    file_put_contents($img, file_get_contents($imageUrl));
-    echo $filePath;
+    echo $imageUrl;
 ?>
