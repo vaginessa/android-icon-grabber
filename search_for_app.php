@@ -5,8 +5,6 @@
     $app_url = 'https://play.google.com/store/apps/details?id=';
     $pkg_tag = "data-docid=";
     $img_tag = "cover-image";
-    $icons_path =  getcwd() . "/images/";
-    $icons_ext = ".png";
     $src_length = strlen(" src=\"");
     $pkg_tag_length = strlen($pkg_tag);
     $img_tag_length = strlen($img_tag);
@@ -24,13 +22,6 @@
     $pkgPosEnd = strpos( $halfHtml, "data");
     //Magic numbers inbound
     $packageName = substr($rawHtml, $pkgPos + $pkg_tag_length + 1, $pkgPosEnd -3);
-    $filePath = '/images/' . $packageName . $icons_ext;
-    
-    //See if we already have the file
-    if (file_exists($icons_path . $packageName . $icons_ext)) {
-        echo $filePath;
-        exit;
-    }
     
     $rawDetailHtml = file_get_contents($app_url . $packageName);
     
