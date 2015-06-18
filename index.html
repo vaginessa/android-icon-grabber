@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#303F9F">
+  <meta name="theme-color" content="#FD9700">
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
@@ -119,20 +119,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             </section>
 
-            <section data-route="search">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a>
-              </paper-material>
-            </section>
-
             <section data-route="free">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
-                </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
+              <paper-input label="Search For Icon By Name" id="search_term" on-keyup="{{checkKey}}"></paper-input>
+              </br>
+              <paper-checkbox>Automatically download</paper-checkbox>
+              </br>
+              </br>
+              <paper-button raised id="search_button" onclick="getSearchTerm()">Search</paper-button>
               </paper-material>
             </section>
 
