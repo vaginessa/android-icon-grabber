@@ -1,6 +1,3 @@
-var SEARCH_URL = "https://play.google.com/store/search?q=";
-var APP_URL = "https://play.google.com/store/apps/details?id=";
-
 var button = document.getElementById("search_button");
 var spinner = document.getElementById("spinner");
 var input = document.getElementById("search_term");
